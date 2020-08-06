@@ -27,4 +27,11 @@ public class Player : MonoBehaviour {
     public void DecreaseMoney() {
         profile.gold -= 1;
     }
+
+    public void DecreaseHealth() {
+        profile.unitStats.health -= 5;
+    }
+    public void IncreaseHealth() {
+        profile.unitStats.health += 5;
+    }
 }

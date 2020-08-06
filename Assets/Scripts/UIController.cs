@@ -8,12 +8,11 @@ public class UIController : MonoBehaviour {
     public Text moneyDisplay;
     public ProgressBar healthBar;
     public ProgressBar manaBar;
+    public TabGroup tabGroup;
 
     // Start is called before the first frame update
     void Start() {
-        moneyDisplay.text = player.profile.gold.ToString();
-        healthBar.SetMax(player.profile.unitStats.maxHealth);
-        manaBar.SetMax(player.profile.unitStats.maxMana);
+
     }
 
     // Update is called once per frame
@@ -21,5 +20,12 @@ public class UIController : MonoBehaviour {
         moneyDisplay.text = player.profile.gold.ToString();
         healthBar.SetCurrent(player.profile.unitStats.health);
         manaBar.SetCurrent(player.profile.unitStats.mana);
+    }
+
+    public void InitializeUI() {
+        moneyDisplay.text = player.profile.gold.ToString();
+        healthBar.SetMax(player.profile.unitStats.maxHealth);
+        manaBar.SetMax(player.profile.unitStats.maxMana);
+        tabGroup.InitializeDefaultPage();
     }
 }

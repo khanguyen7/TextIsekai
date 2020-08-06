@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 // This class is for a Tab Container. It contains functions that are called in the TabButton.cs script.
 
 // TODO: When you deselect a tab, reactivate the default page based on the current game state,
 // also disable the default pages when a tab is activated
 
 public class TabGroup : MonoBehaviour {
+    public GameController gameController;
     public List<TabButton> tabButtons; // A list containing all child Tabs to the current TabGroup
     // Sprites used for different states of a button
     public List<GameObject> objectsToSwap; // A List that contains the game objects that will be set active or inactive.
@@ -17,9 +17,10 @@ public class TabGroup : MonoBehaviour {
     // Variables
     public TabButton selectedTab;
     public bool CurrentTabAlreadySelected = false;
+    int currentDefaultTabIndex;
 
     void Start() {
-        // Start is called before the first frame update        
+        // Start is called before the first frame update
     }
     void Update() {
         // Update is called once per frame       
@@ -75,7 +76,11 @@ public class TabGroup : MonoBehaviour {
         ResetTabs();
         button.background.sprite = tabIdle;
         for (int i = 0; i < objectsToSwap.Count; i++) {
-            objectsToSwap[i].SetActive(false);
+            if (i == currentDefaultTabIndex) {
+                objectsToSwap[i].SetActive(true);
+            } else {
+                objectsToSwap[i].SetActive(false);
+            }
         }
         CurrentTabAlreadySelected = false;
     }
@@ -83,6 +88,21 @@ public class TabGroup : MonoBehaviour {
         foreach (TabButton button in tabButtons) {
             if (selectedTab != null && button == selectedTab) { continue; }
             button.background.sprite = tabIdle;
+        }
+    }
+    public void InitializeDefaultPage() {
+        
+        SetCurrentDefaultPage(gameController.GetCurrentGameState());
+        objectsToSwap[currentDefaultTabIndex].SetActive(true);
+    }
+    public void SetCurrentDefaultPage(string gameState) {
+        string townWord = "town";
+        string battleWord = "battle";
+
+        if (gameState == townWord) {
+            currentDefaultTabIndex = 6;
+        } else if (gameState == battleWord) {
+            currentDefaultTabIndex = 7;
         }
     }
 }

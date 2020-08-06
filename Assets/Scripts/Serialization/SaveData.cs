@@ -11,12 +11,15 @@ public class SaveData {
     public int maxHealth;
     public int maxMana;
     public int gold;
+    public string currentGameState;
 
-    public SaveData (Player player) {
+    public SaveData (Player player, GameState gameState) {
         maxHealth = player.profile.unitStats.maxHealth;
         maxMana = player.profile.unitStats.maxMana;
         health = player.profile.unitStats.health;
         mana = player.profile.unitStats.mana;
         gold = player.profile.gold;
+        currentGameState = gameState.GetCurrentState();
+
     }
 }
