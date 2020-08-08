@@ -9,7 +9,7 @@ public class UnitResources: MonoBehaviour {
     public float currentMana = 100f;
     public float maxMana = 100f;
     public float experience = 0f; //public for now
-    [SerializeField] GameObject deathVFX;
+    //[SerializeField] GameObject deathVFX;
 
     // Getters
     public float GetHealthValue() {
@@ -26,7 +26,7 @@ public class UnitResources: MonoBehaviour {
     public void ReduceHealth(float damage) {
         currentHealth -= damage;
         if (currentHealth <= 0) {
-            TriggerDeathVFX();
+            //TriggerDeathVFX();
             Destroy(gameObject);
         }
     }
@@ -55,9 +55,9 @@ public class UnitResources: MonoBehaviour {
         experience += amount;
         // TODO: level ups
     }
-    private void TriggerDeathVFX() {
+    /*private void TriggerDeathVFX() {
         if (!deathVFX) { return; }
         GameObject deathVFXObject = Instantiate(deathVFX, transform.position, transform.rotation);
         Destroy(deathVFXObject, 1f);
-    }
+    }*/
 }

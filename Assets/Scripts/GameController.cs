@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour {
     GameState gameState;
     string currentGameState = "";
     UIController uIController;
+    public TextController textController;
 
     void Start() {
         // Start is called before the first frame update
@@ -35,6 +36,11 @@ public class GameController : MonoBehaviour {
         currentGameState = gameState.GetCurrentState();
 
         uIController.InitializeUI();
+        textController.CreateText("this is a text message");
+
+        textController.CreateText("this is a text message");
+        textController.CreateText("this is a text message");
+        textController.CreateText("this is a text message");
     }
 
     private void OnApplicationQuit() {

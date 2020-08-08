@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// A central script from which any and all UI-related methods and called
+
 public class UIController : MonoBehaviour {
     public Player player;
     public Text moneyDisplay;
