@@ -15,6 +15,11 @@ public class PlayerPrefsController : MonoBehaviour {
         PlayerPrefs.SetInt(FIRST_TIME_KEY, 1);
     }
 
+    public void SetNewPlayerVal() {
+        PlayerPrefs.SetInt(FIRST_TIME_KEY, 0);
+        // for testing purposes
+    }
+
     public int GetReturningPlayerVal() {
         Debug.Log(PlayerPrefs.GetInt(FIRST_TIME_KEY));
         return PlayerPrefs.GetInt(FIRST_TIME_KEY);

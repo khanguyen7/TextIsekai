@@ -8,6 +8,7 @@ public class TextController : MonoBehaviour {
 
     public Text textObjectPrefab;
     public int mainFontSize;
+    int textCount = 0;
 
     // Start is called before the first frame update
     void Start() {
@@ -26,5 +27,13 @@ public class TextController : MonoBehaviour {
         newText.transform.localScale = new Vector3(1, 1, 1);
         newText.text = message;
         newText.fontSize = 45;
+
+        textCount++;
+    }
+
+    public void DeleteText() {
+        Destroy(GetComponent<Transform>().GetChild(0).gameObject);
+
+        textCount--;
     }
 }

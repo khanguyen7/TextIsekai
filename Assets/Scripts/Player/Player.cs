@@ -7,8 +7,7 @@ public class Player : MonoBehaviour {
     public PlayerProfile profile;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         //DontDestroyOnLoad(this);
     }
 

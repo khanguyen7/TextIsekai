@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
     public Player player;
+    public Text playerNameDisplay;
     public Text moneyDisplay;
     public ProgressBar healthBar;
     public ProgressBar manaBar;
@@ -25,9 +26,11 @@ public class UIController : MonoBehaviour {
     }
 
     public void InitializeUI() {
+        playerNameDisplay.text = player.profile.ReturnPlayerName();
         moneyDisplay.text = player.profile.gold.ToString();
         healthBar.SetMax(player.profile.unitStats.maxHealth);
         manaBar.SetMax(player.profile.unitStats.maxMana);
         tabGroup.InitializeDefaultPage();
     }
+
 }
