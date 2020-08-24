@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+// This class is used in place of the built-in Unity Grid Layouts. 
 public class FlexibleGridLayout : LayoutGroup {
-
     public enum FitType {
         Uniform,
         Width,
@@ -12,13 +11,12 @@ public class FlexibleGridLayout : LayoutGroup {
         FixedRows,
         FixedColumns
     }
-
+    // Variables
     public FitType fitType;
     public int rows;
     public int columns;
     public Vector2 cellSize;
     public Vector2 spacing;
-
     public bool fitX;
     public bool fitY;
 
@@ -40,13 +38,10 @@ public class FlexibleGridLayout : LayoutGroup {
             columns = Mathf.CeilToInt(transform.childCount / (float)rows);
         }
 
-
         float parentWidth = rectTransform.rect.width;
         float parentHeight = rectTransform.rect.height;
-
         float cellWidth = parentWidth / (float)columns - ((spacing.x / (float)columns) * (columns - 1)) - (padding.left / (float)columns) - (padding.right / (float)columns);
         float cellHeight = parentHeight / (float)rows - ((spacing.y / (float)rows) * (rows - 1)) - (padding.top / (float)rows) - (padding.bottom / (float)rows);
-
         cellSize.x = fitX ? cellWidth : cellSize.x;
         cellSize.y = fitY ? cellHeight : cellSize.y;
 

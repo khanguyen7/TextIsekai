@@ -6,7 +6,7 @@ using UnityEngine;
 public class UnitStats : ScriptableObject {
     // This scriptable object contains all of the stats every unit in the game will have
     
-    // Basic
+    // Basic stats
     public int health;
     public int mana;
     public int maxHealth;
@@ -16,8 +16,6 @@ public class UnitStats : ScriptableObject {
     public int magicDMG;
     public int defense;
     public int agility;
-
-
     // Not Basic
     public int strength; // affects attackDMG
     public int intelligence; //affects magicDMG
@@ -26,7 +24,6 @@ public class UnitStats : ScriptableObject {
     public int celerity; // affects agility
 
     public IList ReturnStatNames() {
-
         List<string> statNames = new List<string> {
             "attackDMG",
             "magicDMG",
@@ -38,7 +35,6 @@ public class UnitStats : ScriptableObject {
             "wisdom",
             "celerity"
         };
-
         return statNames;
     }
     public int ReturnStat(string statName) {
@@ -64,7 +60,7 @@ public class UnitStats : ScriptableObject {
         }
     }
     public void SetStat(string statName, int value) {
-
+        // Sets the value of a stat
         if (statName == "attackDMG") {
             attackDMG = value;
         } else if (statName == "magicDMG") {
@@ -86,7 +82,7 @@ public class UnitStats : ScriptableObject {
         }
     }
     public void InitializeStat(int value, int index) {
-
+        // currently not used, forgot what I was gonna use this for
         if (index == 0) {
             attackDMG = value;
         } else if (index == 1) {

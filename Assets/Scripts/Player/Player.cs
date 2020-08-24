@@ -1,19 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// The Player class houses all the components of the player, as well as methods to manipulate data.
 public class Player : MonoBehaviour {
 
     public PlayerProfile profile;
+    public UnitStats stats;
 
     // Start is called before the first frame update
     void Start() {
-        //DontDestroyOnLoad(this);
+
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         
     }
 
@@ -36,9 +36,9 @@ public class Player : MonoBehaviour {
     }
 
     public void DecreaseHealth() {
-        profile.unitStats.health -= 5;
+        stats.health -= 5;
     }
     public void IncreaseHealth() {
-        profile.unitStats.health += 5;
+        stats.health += 5;
     }
 }

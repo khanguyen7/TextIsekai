@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+// This class controls the flow of the game, as well as loading and saving data during startup and quitting.
 public class GameController : MonoBehaviour {
-    //SceneLoader sceneLoader;
+    // Other Components
     PlayerPrefsController playerPrefsController;
-    int returningPlayerVal;
-
     public Player player;
+    UIController uIController;
+    public TextController textController; // if we are using sprites then we will get rid of all the Text stuff.
+    // Variables
+    int returningPlayerVal;
+    string currentGameState = "";
+    Canvas newGameCanvas;
     SaveData saveData;
     GameState gameState;
-    string currentGameState = "";
-    UIController uIController;
-    public TextController textController;
-
+    // Prefabs
     public Canvas newGameCanvasPrefab;
-    Canvas newGameCanvas;
 
     void Start() {
         // Start is called before the first frame update
@@ -39,7 +39,7 @@ public class GameController : MonoBehaviour {
             Setup();
 
             //test updating stats
-            player.profile.unitStats.SetStat("attackDMG", 1);
+            player.stats.SetStat("attackDMG", 1);
             uIController.UpdateSingleStatDisplay("attackDMG");
         }
     }
@@ -54,7 +54,6 @@ public class GameController : MonoBehaviour {
 
     private void Setup() {
         gameState = new GameState();
-
         saveData = SerializationManager.Load(Application.persistentDataPath + "/saves/Save.save");
 
         LoadData();
@@ -69,31 +68,24 @@ public class GameController : MonoBehaviour {
         uIController.InitializeUI();
         textController.CreateText("this is a text message");
 
-        textController.CreateText("this is a text message");
-        textController.CreateText("this is a text message");
-        textController.CreateText("this is a text message");
-        textController.CreateText("this is a text message");
-        textController.CreateText("this is a text message");
-        textController.CreateText("this is a text message");
-        textController.CreateText("this is a text message");
-
     }
-
     private void NewPlayerSetup() {
-
-        newGameCanvas = Instantiate(newGameCanvasPrefab);
+        // Setup that only happens when you open the game for the first time
+        newGameCanvas = Instantiate(newGameCanvasPrefab); // Creates new canvas that holds new player setup UI
         playerPrefsController.SetReturningPlayerVal();
 
         InputField inputField = newGameCanvas.GetComponentInChildren<InputField>();
-
+        // Add new listener to see when the player is done typing their name.
         inputField.onEndEdit.AddListener(delegate{ validateInput(inputField); });
-
     }
-
     void validateInput(InputField inputField) {
+        // do some input validation here
+
+
+        // finish game setup ******move this to it's own method?? or rename method
         player.profile.SetPlayerName(inputField.text);
         Debug.Log(player.profile.ReturnPlayerName());
-        RemoveNewPlayerCanvas();
+        Destroy(newGameCanvas.gameObject);
         gameState = new GameState();
 
         uIController = GetComponent<UIController>();
@@ -104,40 +96,32 @@ public class GameController : MonoBehaviour {
 
         uIController.InitializeUI();
         textController.CreateText("this is a text message");
-
     }
-    private void RemoveNewPlayerCanvas() {
-        Destroy(newGameCanvas.gameObject);
-    }
-
     private void LoadData() {
-        player.profile.unitStats.maxHealth = saveData.maxHealth;
-        player.profile.unitStats.maxMana = saveData.maxMana;
-        player.profile.unitStats.health = saveData.health;
-        player.profile.unitStats.mana = saveData.mana;
-
-        player.profile.unitStats.SetStat("attackDMG", saveData.attackDMG);
-        player.profile.unitStats.SetStat("magicDMG", saveData.magicDMG);
-        player.profile.unitStats.SetStat("defense", saveData.defense);
-        player.profile.unitStats.SetStat("agility", saveData.agility);
-        player.profile.unitStats.SetStat("strength", saveData.strength);
-        player.profile.unitStats.SetStat("intelligence", saveData.intelligence);
-        player.profile.unitStats.SetStat("constitution", saveData.constitution);
-        player.profile.unitStats.SetStat("wisdom", saveData.wisdom);
-        player.profile.unitStats.SetStat("celerity", saveData.celerity);
-
-        player.profile.SetGold(saveData.gold);
-        player.profile.SetExperience(saveData.experience);
+        player.stats.maxHealth = saveData.maxHealth;
+        player.stats.maxMana = saveData.maxMana;
+        player.stats.health = saveData.health;
+        player.stats.mana = saveData.mana;
+        player.stats.SetStat("attackDMG", saveData.attackDMG);
+        player.stats.SetStat("magicDMG", saveData.magicDMG);
+        player.stats.SetStat("defense", saveData.defense);
+        player.stats.SetStat("agility", saveData.agility);
+        player.stats.SetStat("strength", saveData.strength);
+        player.stats.SetStat("intelligence", saveData.intelligence);
+        player.stats.SetStat("constitution", saveData.constitution);
+        player.stats.SetStat("wisdom", saveData.wisdom);
+        player.stats.SetStat("celerity", saveData.celerity);
+        
+        player.profile = saveData.profile;
         gameState.currentState = saveData.currentGameState;
-        player.profile.SetPlayerName(saveData.playerName);
     }
 
     private void LoadDefaultData() {
         // for testing and resetting purposes
-        player.profile.unitStats.maxHealth = saveData.maxHealth;
-        player.profile.unitStats.maxMana = saveData.maxMana;
-        player.profile.unitStats.health = saveData.maxHealth;
-        player.profile.unitStats.mana = saveData.maxMana;
+        player.stats.maxHealth = saveData.maxHealth;
+        player.stats.maxMana = saveData.maxMana;
+        player.stats.health = saveData.maxHealth;
+        player.stats.mana = saveData.maxMana;
         player.profile.SetGold(0);
     }
 

@@ -1,50 +1,47 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-// the data to save
+﻿// The SaveData class contains all the information that will be stored in a file.
 [System.Serializable]
 public class SaveData {
-
+    // Variables (public for use in other scripts; could make getters for them)
+    // Player Stats
+    public PlayerProfile profile; // contains player name, gold, and experience
     public int health;
     public int mana;
     public int maxHealth;
     public int maxMana;
-    public int gold;
-    public int experience;
-    public string currentGameState;
-    public string playerName;
-    public List<int> stats;
     public int attackDMG;
     public int magicDMG;
     public int defense;
     public int agility;
-    public int strength; // affects attackDMG
-    public int intelligence; //affects magicDMG
-    public int constitution; //affects health
-    public int wisdom; //affects mana
-    public int celerity; // affects agility
+    public int strength;
+    public int intelligence;
+    public int constitution;
+    public int wisdom;
+    public int celerity;
+    // Other
+    public string currentGameState;
+
+    // I tried to use a List/Dictionary for all of the stats, however I couldn't find a way to
+    // make it work and actually save and load. Will revist later.
 
     public SaveData (Player player, GameState gameState) {
-        maxHealth = player.profile.unitStats.maxHealth;
-        maxMana = player.profile.unitStats.maxMana;
-        health = player.profile.unitStats.health;
-        mana = player.profile.unitStats.mana;
-        gold = player.profile.ReturnGold();
-        experience = player.profile.ReturnExperience();
+        // This makes it so that when we create a SaveData 'object', it auto loads all the current
+        // info into the variables so we don't have to do it later.
+        profile = player.profile;
+        maxHealth = player.stats.maxHealth;
+        maxMana = player.stats.maxMana;
+        health = player.stats.health;
+        mana = player.stats.mana;
         // this hurts to look at, need to figure out why the list from before did not work
-        attackDMG = player.profile.unitStats.ReturnStat("attackDMG");
-        magicDMG = player.profile.unitStats.ReturnStat("magicDMG");
-        defense = player.profile.unitStats.ReturnStat("defense");
-        agility = player.profile.unitStats.ReturnStat("agility");
-        strength = player.profile.unitStats.ReturnStat("strength");
-        intelligence = player.profile.unitStats.ReturnStat("intelligence");
-        constitution = player.profile.unitStats.ReturnStat("constitution");
-        wisdom = player.profile.unitStats.ReturnStat("wisdom");
-        celerity = player.profile.unitStats.ReturnStat("celerity");
+        attackDMG = player.stats.ReturnStat("attackDMG");
+        magicDMG = player.stats.ReturnStat("magicDMG");
+        defense = player.stats.ReturnStat("defense");
+        agility = player.stats.ReturnStat("agility");
+        strength = player.stats.ReturnStat("strength");
+        intelligence = player.stats.ReturnStat("intelligence");
+        constitution = player.stats.ReturnStat("constitution");
+        wisdom = player.stats.ReturnStat("wisdom");
+        celerity = player.stats.ReturnStat("celerity");
 
         currentGameState = gameState.GetCurrentState();
-        playerName = player.profile.ReturnPlayerName();
-
     }
 }

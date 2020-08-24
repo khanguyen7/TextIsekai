@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+// This scriptable object is the template for items
 [CreateAssetMenu(menuName = "Item")]
 public class Item : ScriptableObject {
 

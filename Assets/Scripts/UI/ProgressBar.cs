@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-
+// A class for a custom progressbar that has both a linear and radial form.
 [ExecuteInEditMode()]
 public class ProgressBar : MonoBehaviour {
 #if UNITY_EDITOR
@@ -20,18 +18,13 @@ public class ProgressBar : MonoBehaviour {
         obj.transform.SetParent(Selection.activeGameObject.transform, false);
     }
 #endif
-
+    // Variables
     public int maximum;
     public int minimum;
     public int current;
     public Image mask;
     public Image fill;
     public Color color;
-
-    // Start is called before the first frame update
-    void Start() {
-
-    }
 
     // Update is called once per frame
     void Update() {

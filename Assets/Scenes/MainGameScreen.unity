@@ -517,6 +517,12 @@ PrefabInstance:
       propertyPath: profile.playerName
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4014786108926487122, guid: 26b480ed765ca7348b144a668b37a42f,
+        type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: ec5abf9fccaaca74ab07e50097ead910,
+        type: 2}
     - target: {fileID: 4014786108926487124, guid: 26b480ed765ca7348b144a668b37a42f,
         type: 3}
       propertyPath: m_Name

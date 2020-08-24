@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// This class contains all the information about the profile of a player
+// Future things to add: Guild ranks, achievements, other statistics.
 [System.Serializable]
 public class PlayerProfile {
-    public UnitStats unitStats;
     string playerName;
     int gold;
     int experience;

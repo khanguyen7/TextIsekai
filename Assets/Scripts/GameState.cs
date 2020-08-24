@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿// This class contains setters and a getter for the current game state
 [System.Serializable]
 public class GameState {
-
     string[] listOfStates = {"town", "battle", "gather"};
     public string currentState;
 

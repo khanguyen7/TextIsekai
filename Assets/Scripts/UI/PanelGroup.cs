@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
+// This class is used to manage the game panels.
 public class PanelGroup : MonoBehaviour {
-
     public GameObject[] panels;
     public TabGroup tabGroup;
     public int panelIndex; //index of current panel

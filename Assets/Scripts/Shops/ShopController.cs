@@ -9,10 +9,6 @@ public class ShopController : MonoBehaviour {
     public BuyMenu buyMenu;
 
 
-
-    public ShopInventorySettings inventorySettings;
-
-
     // Start is called before the first frame update
     void Start() {
         buyMenu.InitializeItems(items);
