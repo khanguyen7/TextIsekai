@@ -18,11 +18,11 @@ MonoBehaviour:
   maxMana: 10
   experience: 0
   attackDMG: 1
+  magicDMG: 1
   defense: 1
   agility: 1
-  spellCastMod: 0
   strength: 0
   intelligence: 0
   constitution: 0
   wisdom: 0
-  wits: 0
+  celerity: 0

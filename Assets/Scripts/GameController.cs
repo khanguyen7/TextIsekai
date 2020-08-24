@@ -37,6 +37,10 @@ public class GameController : MonoBehaviour {
             // load saved game data before loading scene
             Debug.Log("returning player setup");
             Setup();
+
+            //test updating stats
+            player.profile.unitStats.SetStat("attackDMG", 1);
+            uIController.UpdateSingleStatDisplay("attackDMG");
         }
     }
 
@@ -64,6 +68,15 @@ public class GameController : MonoBehaviour {
 
         uIController.InitializeUI();
         textController.CreateText("this is a text message");
+
+        textController.CreateText("this is a text message");
+        textController.CreateText("this is a text message");
+        textController.CreateText("this is a text message");
+        textController.CreateText("this is a text message");
+        textController.CreateText("this is a text message");
+        textController.CreateText("this is a text message");
+        textController.CreateText("this is a text message");
+
     }
 
     private void NewPlayerSetup() {
@@ -91,6 +104,7 @@ public class GameController : MonoBehaviour {
 
         uIController.InitializeUI();
         textController.CreateText("this is a text message");
+
     }
     private void RemoveNewPlayerCanvas() {
         Destroy(newGameCanvas.gameObject);
@@ -101,7 +115,19 @@ public class GameController : MonoBehaviour {
         player.profile.unitStats.maxMana = saveData.maxMana;
         player.profile.unitStats.health = saveData.health;
         player.profile.unitStats.mana = saveData.mana;
-        player.profile.gold = saveData.gold;
+
+        player.profile.unitStats.SetStat("attackDMG", saveData.attackDMG);
+        player.profile.unitStats.SetStat("magicDMG", saveData.magicDMG);
+        player.profile.unitStats.SetStat("defense", saveData.defense);
+        player.profile.unitStats.SetStat("agility", saveData.agility);
+        player.profile.unitStats.SetStat("strength", saveData.strength);
+        player.profile.unitStats.SetStat("intelligence", saveData.intelligence);
+        player.profile.unitStats.SetStat("constitution", saveData.constitution);
+        player.profile.unitStats.SetStat("wisdom", saveData.wisdom);
+        player.profile.unitStats.SetStat("celerity", saveData.celerity);
+
+        player.profile.SetGold(saveData.gold);
+        player.profile.SetExperience(saveData.experience);
         gameState.currentState = saveData.currentGameState;
         player.profile.SetPlayerName(saveData.playerName);
     }
@@ -112,7 +138,7 @@ public class GameController : MonoBehaviour {
         player.profile.unitStats.maxMana = saveData.maxMana;
         player.profile.unitStats.health = saveData.maxHealth;
         player.profile.unitStats.mana = saveData.maxMana;
-        player.profile.gold = 0;
+        player.profile.SetGold(0);
     }
 
     // everytime we change locations and change game state, call method in tabgroups to change default page

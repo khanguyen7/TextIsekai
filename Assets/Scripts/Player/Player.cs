@@ -20,11 +20,19 @@ public class Player : MonoBehaviour {
     // UI Methods
 
     public void IncreaseMoney() {
-        profile.gold += 1;
+        profile.SetGold(profile.ReturnGold() + 1);
     }
     
     public void DecreaseMoney() {
-        profile.gold -= 1;
+        profile.SetGold(profile.ReturnGold() - 1);
+    }
+
+    public void IncreaseExperience() {
+        profile.SetExperience(profile.ReturnExperience() + 10);
+    }
+
+    public void DecreaseExperience() {
+        profile.SetExperience(profile.ReturnExperience() + 10);
     }
 
     public void DecreaseHealth() {

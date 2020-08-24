@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlayerProfile {
     public UnitStats unitStats;
     string playerName;
-    public int gold;
-    public int experience;
+    int gold;
+    int experience;
 
     public string ReturnPlayerName() {
         return playerName;
@@ -15,5 +15,19 @@ public class PlayerProfile {
 
     public void SetPlayerName(string name) {
         playerName = name;
+    }
+    public int ReturnGold() {
+        return gold;
+    }
+
+    public void SetGold(int amount) {
+        gold = amount;
+    }
+    public int ReturnExperience() {
+        return experience;
+    }
+
+    public void SetExperience(int amount) {
+        experience = amount;
     }
 }
