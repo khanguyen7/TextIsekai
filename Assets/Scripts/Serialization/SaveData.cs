@@ -1,6 +1,9 @@
 ﻿// The SaveData class contains all the information that will be stored in a file.
 [System.Serializable]
 public class SaveData {
+
+    public PlayerData MyPlayerData { get; set; }
+
     // Variables (public for use in other scripts; could make getters for them)
     // Player Stats
     public PlayerProfile profile; // contains player name, gold, and experience
@@ -44,4 +47,14 @@ public class SaveData {
 
         currentGameState = gameState.GetCurrentState();
     }
+}
+
+[System.Serializable]
+public class PlayerData {
+
+}
+
+[System.Serializable]
+public class ItemData {
+
 }

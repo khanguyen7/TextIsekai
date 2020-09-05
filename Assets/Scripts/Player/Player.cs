@@ -7,6 +7,8 @@ public class Player : MonoBehaviour {
     public PlayerProfile profile;
     public UnitStats stats;
 
+    public InventoryObject inventory;
+
     // Start is called before the first frame update
     void Start() {
 
@@ -41,4 +43,5 @@ public class Player : MonoBehaviour {
     public void IncreaseHealth() {
         stats.health += 5;
     }
+
 }

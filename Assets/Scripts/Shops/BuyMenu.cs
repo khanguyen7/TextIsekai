@@ -22,7 +22,7 @@ public class BuyMenu : MonoBehaviour {
     void Update() {
         
     }
-
+    /*
     public void InitializeItems(List<Item> items) {
         foreach (Item item in items) {
             var button = Instantiate(itemButtonPrefab, centerDisplayContent.transform);
@@ -36,4 +36,5 @@ public class BuyMenu : MonoBehaviour {
         currentButton = button;
 
     }
+    */
 }

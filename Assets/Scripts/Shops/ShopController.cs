@@ -5,13 +5,13 @@ using UnityEngine;
 public class ShopController : MonoBehaviour {
 
 
-    public List<Item> items;
+    //public List<Item> items;
     public BuyMenu buyMenu;
 
 
     // Start is called before the first frame update
     void Start() {
-        buyMenu.InitializeItems(items);
+        //buyMenu.InitializeItems(items);
     }
 
     // Update is called once per frame

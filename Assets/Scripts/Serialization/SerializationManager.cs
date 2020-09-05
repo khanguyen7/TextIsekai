@@ -35,7 +35,6 @@ public class SerializationManager : MonoBehaviour {
             return null;
         }
     }
-
     public static BinaryFormatter GetBinaryFormatter() {
         BinaryFormatter formatter = new BinaryFormatter();
         return formatter;

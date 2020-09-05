@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour {
     // Other Components
     PlayerPrefsController playerPrefsController;
     public Player player;
-    UIController uIController;
+    public UIController uIController;
     public TextController textController; // if we are using sprites then we will get rid of all the Text stuff.
     // Variables
     int returningPlayerVal;
@@ -58,8 +58,6 @@ public class GameController : MonoBehaviour {
 
         LoadData();
         //LoadDefaultData();
-
-        uIController = GetComponent<UIController>();
         textController = FindObjectOfType<TextController>();
 
         gameState.SetTownState(); // for testing
@@ -87,8 +85,6 @@ public class GameController : MonoBehaviour {
         Debug.Log(player.profile.ReturnPlayerName());
         Destroy(newGameCanvas.gameObject);
         gameState = new GameState();
-
-        uIController = GetComponent<UIController>();
         textController = FindObjectOfType<TextController>();
 
         gameState.SetTownState();

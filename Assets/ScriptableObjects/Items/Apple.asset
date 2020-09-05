@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bd794cc73ea0a94ca5ef3f50fffa47d, type: 3}
-  m_Name: Item1
+  m_Script: {fileID: 11500000, guid: adfd33b7d2a718e4fbc8c4dea0b0802e, type: 3}
+  m_Name: Apple
   m_EditorClassIdentifier: 
-  itemName: item1
-  value: 10
-  description: test item 1
+  itemPrefab: {fileID: 846240709185813619, guid: 7529e1df15ed9f04d88522ec66757d87,
+    type: 3}
+  type: 0
+  description: just an apple
+  restoreHealthValue: 10

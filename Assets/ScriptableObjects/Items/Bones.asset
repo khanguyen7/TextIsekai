@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bd794cc73ea0a94ca5ef3f50fffa47d, type: 3}
-  m_Name: Item3
+  m_Script: {fileID: 11500000, guid: 5f640dd8f0537d340a08a417bfc1e74a, type: 3}
+  m_Name: Bones
   m_EditorClassIdentifier: 
-  itemName: item3
-  value: 105
-  description: test item 3
+  itemPrefab: {fileID: 8226869938875148803, guid: 7736a4eadc837f74da757dc04922d833,
+    type: 3}
+  type: 2
+  description: 'sum bones
+
+'

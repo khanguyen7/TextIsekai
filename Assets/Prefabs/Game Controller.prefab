@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4257758244683808892}
   - component: {fileID: 4257758244683808893}
-  - component: {fileID: 4257758244683808882}
+  - component: {fileID: 28321350}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: GameController
@@ -45,8 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  uIController: {fileID: 0}
   textController: {fileID: 0}
---- !u!114 &4257758244683808882
+  newGameCanvasPrefab: {fileID: 2324928957633972756, guid: ed04a784aef8a564f942002af54bae5b,
+    type: 3}
+--- !u!114 &28321350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,11 +58,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4257758244683808883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e243f6930c8326448972eca46b81551e, type: 3}
+  m_Script: {fileID: 11500000, guid: c67e070f1a0fcf6489262c08dbb88e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  moneyDisplay: {fileID: 0}
-  healthBar: {fileID: 0}
-  manaBar: {fileID: 0}
-  tabGroup: {fileID: 0}
