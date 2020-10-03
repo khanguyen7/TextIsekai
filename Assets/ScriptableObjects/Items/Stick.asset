@@ -9,12 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72e23562d88b366438d91a64931b102a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1695fc250469c4647a2f50ed5ef53d6b, type: 3}
   m_Name: Stick
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 2810182653983526319, guid: 67fd10b0fbf56324cb37e9f2c89be254,
+  itemIcon: {fileID: -3984734642602919159, guid: 778e6db285615034e94d7a3afc13569e,
     type: 3}
-  type: 1
-  description: a slightly sharp stick
-  attackBonus: 10
-  defenseBonus: 0
+  stackable: 0
+  type: 8
+  description: A stick
+  data:
+    name: 
+    Id: -1
+    attributes: []

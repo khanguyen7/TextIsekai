@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour {
 
         playerPrefsController = GetComponent<PlayerPrefsController>();
 
-        //playerPrefsController.SetNewPlayerVal(); // for testing
+        //playerPrefsController.SetNewPlayerVal(); // for testing in editor
 
         returningPlayerVal = playerPrefsController.GetReturningPlayerVal();
 
@@ -39,13 +39,20 @@ public class GameController : MonoBehaviour {
             Setup();
 
             //test updating stats
-            player.stats.SetStat("attackDMG", 1);
+            player.stats.SetStat("attackDMG", 10);
             uIController.UpdateSingleStatDisplay("attackDMG");
         }
     }
 
+    public void QuitGame() {
+        Application.Quit();
+    }
+
     private void OnApplicationQuit() {
-        SerializationManager.Save("Save", new SaveData(player, gameState));
+        SerializationManager.Save("Save", new SaveData(player, gameState), new InventorySaveData(player));
+        // clear inventories to make sure nothing weird happens when we load the saved inventories when reopening the game
+        player.inventory.Container.Clear();
+        player.equipment.Container.Clear();
     }
 
     private void Update() {
@@ -54,7 +61,20 @@ public class GameController : MonoBehaviour {
 
     private void Setup() {
         gameState = new GameState();
+        // THE SAVE PATHS ARE IMPORTANT TO GET RIGHT DONT FUCK IT UP AGAIN LOL
+        // also uh probably move this to its own method
         saveData = SerializationManager.Load(Application.persistentDataPath + "/saves/Save.save");
+        var playerInven = player.inventory.Container.Slots;
+        var tempContainer = SerializationManager.LoadInventory(Application.persistentDataPath + "/saves/SaveInventory.inventory");
+        for (int i = 0; i < playerInven.Length; i++) {
+            //Debug.Log("updating inventory slot i = " + i);
+            playerInven[i].UpdateSlot(tempContainer.Slots[i].item, tempContainer.Slots[i].amount);
+        }
+        var playerEquip = player.equipment.Container.Slots;
+        tempContainer = SerializationManager.LoadInventory(Application.persistentDataPath + "/saves/SaveEquipment.equipment");
+        for (int i = 0; i < playerEquip.Length; i++) {
+            playerEquip[i].UpdateSlot(tempContainer.Slots[i].item, tempContainer.Slots[i].amount);
+        }
 
         LoadData();
         //LoadDefaultData();
@@ -100,7 +120,8 @@ public class GameController : MonoBehaviour {
         player.stats.mana = saveData.mana;
         player.stats.SetStat("attackDMG", saveData.attackDMG);
         player.stats.SetStat("magicDMG", saveData.magicDMG);
-        player.stats.SetStat("defense", saveData.defense);
+        player.stats.SetStat("physicalDefense", saveData.physicalDefense);
+        player.stats.SetStat("magicDefense", saveData.magicDefense);
         player.stats.SetStat("agility", saveData.agility);
         player.stats.SetStat("strength", saveData.strength);
         player.stats.SetStat("intelligence", saveData.intelligence);

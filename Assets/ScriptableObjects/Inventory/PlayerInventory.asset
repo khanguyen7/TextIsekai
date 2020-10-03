@@ -12,16 +12,187 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd10d3dd21f0ac48a31d1aace87737a, type: 3}
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
+  database: {fileID: 11400000, guid: 4c16163686d94394184a501bafea14a9, type: 2}
+  type: 0
   Container:
-  - item: {fileID: 11400000, guid: 4d8849c2b655f924a9118e1e50c3dba5, type: 2}
-    amount: 3
-  - item: {fileID: 11400000, guid: b425c172280c84e4a8d7f6ccfa641ccf, type: 2}
-    amount: 5
-  - item: {fileID: 11400000, guid: af10f85ebe9d5074d9e28d6b8f1984b7, type: 2}
-    amount: 1
-  - item: {fileID: 11400000, guid: 777130296ee1d70499a5a39f11c5d266, type: 2}
-    amount: 1
-  - item: {fileID: 11400000, guid: 26c6ce045a9ad7948935ed7b7fa081df, type: 2}
-    amount: 10
-  - item: {fileID: 11400000, guid: a2c8982af7f33a845b919972468d9f38, type: 2}
-    amount: 1
+    Slots:
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0
+    - AllowedItemTypes: 
+      item:
+        name: 
+        Id: -1
+        attributesOnItem: []
+      amount: 0

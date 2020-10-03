@@ -10,14 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1695fc250469c4647a2f50ed5ef53d6b, type: 3}
-  m_Name: Apple
+  m_Name: Chestpiece 2
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: -3965843142671303671, guid: 778e6db285615034e94d7a3afc13569e,
+  itemIcon: {fileID: 5863559567839246878, guid: 778e6db285615034e94d7a3afc13569e,
     type: 3}
-  stackable: 1
-  type: 0
-  description: An apple.
+  stackable: 0
+  type: 2
+  description: 
   data:
     name: 
-    Id: -1
-    attributes: []
+    Id: 5
+    attributesOnItem:
+    - attribute: 2
+      min: 4
+      max: 9
+      value: 0

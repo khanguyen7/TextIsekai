@@ -44,3 +44,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: ec5abf9fccaaca74ab07e50097ead910, type: 2}
+  inventory: {fileID: 11400000, guid: 64deae4c1aa542d43b638854bfa844a9, type: 2}
+  equipment: {fileID: 11400000, guid: 48e97de39b645eb4db5e7e161972d119, type: 2}
+  attributes:
+  - type: 0
+    value:
+      baseValue: 5
+      modifiedValue: 0
+  - type: 1
+    value:
+      baseValue: 0
+      modifiedValue: 0
+  - type: 2
+    value:
+      baseValue: 0
+      modifiedValue: 0
+  - type: 3
+    value:
+      baseValue: 0
+      modifiedValue: 0
+  - type: 4
+    value:
+      baseValue: 0
+      modifiedValue: 0
+  - type: 5
+    value:
+      baseValue: 0
+      modifiedValue: 0
+  - type: 6
+    value:
+      baseValue: 0
+      modifiedValue: 0
+  - type: 7
+    value:
+      baseValue: 0
+      modifiedValue: 0
+  - type: 8
+    value:
+      baseValue: 0
+      modifiedValue: 0
+  - type: 9
+    value:
+      baseValue: 0
+      modifiedValue: 0
+  - type: 10
+    value:
+      baseValue: 0
+      modifiedValue: 0
