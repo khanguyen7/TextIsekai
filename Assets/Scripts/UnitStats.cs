@@ -14,25 +14,29 @@ public class UnitStats : ScriptableObject {
     public int experience;
     public int attackDMG;
     public int magicDMG;
-    public int defense;
+    public int physicalDefense;
+    public int magicDefense;
     public int agility;
     // Not Basic
     public int strength; // affects attackDMG
     public int intelligence; //affects magicDMG
     public int constitution; //affects health
     public int wisdom; //affects mana
+    public int wits; // affects mana costs
     public int celerity; // affects agility
 
     public IList ReturnStatNames() {
         List<string> statNames = new List<string> {
             "attackDMG",
             "magicDMG",
-            "defense",
+            "physicalDefense",
+            "magicDefense",
             "agility",
             "strength",
             "intelligence",
             "constitution",
             "wisdom",
+            "wits",
             "celerity"
         };
         return statNames;
@@ -43,8 +47,10 @@ public class UnitStats : ScriptableObject {
             return attackDMG;
         } else if (statName == "magicDMG") {
             return magicDMG;
-        } else if (statName == "defense") {
-            return defense;
+        } else if (statName == "PhysicalDefense") {
+            return physicalDefense;
+        } else if (statName == "magicDefense") {
+            return magicDefense;
         } else if (statName == "agility") {
             return agility;
         } else if (statName == "strength") {
@@ -55,6 +61,8 @@ public class UnitStats : ScriptableObject {
             return constitution;
         } else if (statName == "wisdom") {
             return wisdom;
+        } else if (statName == "wits") {
+            return wits;
         } else {
             return celerity;
         }
@@ -65,8 +73,10 @@ public class UnitStats : ScriptableObject {
             attackDMG = value;
         } else if (statName == "magicDMG") {
             magicDMG = value;
-        } else if (statName == "defense") {
-            defense = value;
+        } else if (statName == "physicalDefense") {
+            physicalDefense = value;
+        } else if (statName == "magicDefense") {
+            magicDefense = value;
         } else if (statName == "agility") {
             agility = value;
         } else if (statName == "strength") {
@@ -77,6 +87,8 @@ public class UnitStats : ScriptableObject {
             constitution = value;
         } else if (statName == "wisdom") {
             wisdom = value;
+        } else if (statName == "wits") {
+            wits = value;
         } else {
             celerity = value;
         }
@@ -88,17 +100,21 @@ public class UnitStats : ScriptableObject {
         } else if (index == 1) {
             magicDMG = value;
         } else if (index == 2) {
-            defense = value;
+            physicalDefense = value;
         } else if (index == 3) {
-            agility = value;
+            magicDefense = value;
         } else if (index == 4) {
-            strength = value;
+            agility = value;
         } else if (index == 5) {
-            intelligence = value;
+            strength = value;
         } else if (index == 6) {
-            constitution = value;
+            intelligence = value;
         } else if (index == 7) {
+            constitution = value;
+        } else if (index == 8) {
             wisdom = value;
+        } else if (index == 9) {
+            wits = value;
         } else {
             celerity = value;
         }

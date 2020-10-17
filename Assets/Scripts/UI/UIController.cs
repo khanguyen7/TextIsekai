@@ -7,8 +7,8 @@ public class UIController : MonoBehaviour {
     // UI Elements
     public Text playerNameDisplay;
     public Text moneyDisplay;
-    public ProgressBar healthBar;
-    public ProgressBar manaBar;
+    //public ProgressBar healthBar;
+    //public ProgressBar manaBar;
     public TabGroup tabGroup;
     public GameObject statsContainer;
     public Text textObjectPrefab;
@@ -23,15 +23,15 @@ public class UIController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         moneyDisplay.text = player.profile.ReturnGold().ToString();
-        healthBar.SetCurrent(player.stats.health);
-        manaBar.SetCurrent(player.stats.mana);
+        //healthBar.SetCurrent(player.stats.health);
+        //manaBar.SetCurrent(player.stats.mana);
     }
 
     public void InitializeUI() {
         playerNameDisplay.text = player.profile.ReturnPlayerName();
         moneyDisplay.text = player.profile.ReturnGold().ToString();
-        healthBar.SetMax(player.stats.maxHealth);
-        manaBar.SetMax(player.stats.maxMana);
+        //healthBar.SetMax(player.stats.maxHealth);
+        //manaBar.SetMax(player.stats.maxMana);
         tabGroup.InitializeDefaultPage();
         SetupStatsDisplay();
     }

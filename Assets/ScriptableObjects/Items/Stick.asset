@@ -9,6 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e5e4991923a0c24aa2ffef5c4f443e0, type: 3}
-  m_Name: GeneralStore
+  m_Script: {fileID: 11500000, guid: 1695fc250469c4647a2f50ed5ef53d6b, type: 3}
+  m_Name: Stick
   m_EditorClassIdentifier: 
+  itemIcon: {fileID: -3984734642602919159, guid: 778e6db285615034e94d7a3afc13569e,
+    type: 3}
+  stackable: 0
+  type: 8
+  description: A stick
+  data:
+    name: 
+    Id: -1
+    attributes: []
